@@ -1,15 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const dungeon_controller = require('./controller/dungeon_contoller')
+const config = require('../config.js')
 
+// MIDDLE WARE
 const app = express();
-
-const port = 4000;
-
-// app.use(express.static("../front-end/src/App.jsx"))
 
 app.use(bodyParser.json());
 
+// END POINTS
 app.post('/api/dungeon', dungeon_controller.create);
 
 app.get('/api/dungeon', dungeon_controller.read)
@@ -20,6 +19,7 @@ app.put('/api/dungeon/:id', dungeon_controller.update)
 
 app.delete('/api/dungeon', dungeon_controller.delete)
 
-app.listen(port, () => {
-    console.log(`The server is running on port: ${port}`);
+// IT CAN HERE YOU
+app.listen(config.port, () => {
+    console.log(`The server is running on port: ${config.port}`);
 });

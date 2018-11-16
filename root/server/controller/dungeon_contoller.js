@@ -20,6 +20,7 @@ let dungeon_controller = {
             size: req.body.size,
             psionicAbility: req.body.psionicAbility,
             attackDefenceModes: req.body.attackDefenceModes,
+            xp: req.body.xp,
             id,
         }
         dungeon.push(newMonster)
@@ -52,6 +53,7 @@ let dungeon_controller = {
                 monster.size = req.body.size || monster.size;
                 monster.psionicAbility = req.body.psionicAbility || monster.psionicAbility;
                 monster.attackDefenceModes = req.body.attackDefenceModes || monster.attackDefenceModes;
+                monster.xp = req.body.xp || monster.xp;
             }
         })
         res.status(200).send(dungeon)

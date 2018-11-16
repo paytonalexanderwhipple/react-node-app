@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import Header from "./components/Header.jsx";
-import Input from "./components/InputBox.jsx"
+import InputBox from "./components/InputBox.jsx";
 import './App.css';
 
 class App extends Component {
@@ -9,13 +9,23 @@ class App extends Component {
     super();
 
     this.state = {
-      monster: {},
-      input: {},
+      monsterInput: {
+
+      },
+      monsterDisplay: {
+
+      },
     }
   }
   
   deleteMonster(name) {
-    axios.delete(`/api/dungeon?name=kobald`)
+    axios.delete(`/api/dungeon?name=${name}`)
+  }
+
+  handleChangeInput = (event) => {
+    let newObject = Object.assign({}, this.state.monsterInput)
+    newObject[event.target.name] = event.target.value;
+    this.setState({monsterInput: newObject})
   }
 
   render() {
@@ -23,7 +33,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <button onClick={this.deleteMonster}>delete</button>
+        <InputBox handleChange={this.handleChangeInput}/>
       </div>
     );
   }
