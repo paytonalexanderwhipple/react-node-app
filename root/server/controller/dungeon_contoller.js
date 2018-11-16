@@ -11,6 +11,7 @@ let dungeon_controller = {
             move: req.body.move,
             HD: req.body.HD,
             noOfAttacks: req.body.noOfAttacks,
+            damageAttack: req.body.damageAttack,
             specialAttacks: req.body.specialAttacks,
             specialDefenses: req.body.specialDefenses,
             magicResistance: req.body.magicResistance,
@@ -18,6 +19,7 @@ let dungeon_controller = {
             alignment: req.body.alignment,
             size: req.body.size,
             psionicAbility: req.body.psionicAbility,
+            attackDefenceModes: req.body.attackDefenceModes,
             id,
         }
         dungeon.push(newMonster)
@@ -40,6 +42,7 @@ let dungeon_controller = {
                 monster.AC = req.body.AC || monster.AC;
                 monster.move = req.body.move || monster.move;
                 monster.HD = req.body.HD || monster.HD;
+                monster.damageAttack = req.body.damageAttack || monster.damageAttack;
                 monster.noOfAttacks = req.body.noOfAttacks || monster.noOfAttacks;
                 monster.specialAttacks = req.body.specialAttacks || monster.specialAttacks;
                 monster.specialDefenses = req.body.specialDefenses || monster.specialDefenses;
@@ -48,12 +51,13 @@ let dungeon_controller = {
                 monster.alignment = req.body.alignment || monster.alignment;
                 monster.size = req.body.size || monster.size;
                 monster.psionicAbility = req.body.psionicAbility || monster.psionicAbility;
+                monster.attackDefenceModes = req.body.attackDefenceModes || monster.attackDefenceModes;
             }
         })
         res.status(200).send(dungeon)
     },
     delete: (req, res) => {
-        dungeon = dungeon.filter((item) => item.id != req.params.id)
+        dungeon = dungeon.filter((monster) => monster.name != req.query.name)
         res.status(200).send(dungeon)
     }
 }
