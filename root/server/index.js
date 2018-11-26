@@ -19,7 +19,7 @@ app.put('/api/dungeon/:id', dungeon_controller.update)
 
 app.delete('/api/dungeon', dungeon_controller.delete)
 
-// IT CAN HERE YOU
+// IT CAN HEAR YOU
 app.listen(config.port, () => {
     console.log(`The server is running on port: ${config.port}`);
 });

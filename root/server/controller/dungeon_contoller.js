@@ -1,6 +1,26 @@
-let dungeon = [];
+let dungeon = [
+    {
+    "name": "Kobald",
+    "noAppearing": "5-20",
+    "AC": "8",
+    "move": "6\"",
+    "HD": "1 + 3",
+    "noOfAttacks": "3",
+    "damageAttack": "1-2/1-8/2-12",
+    "specialAttacks": "none",
+    "specialDefenses": "none",
+    "magicResistance": "none",
+    "intelligence": "low",
+    "alignment": "Chaotic Evil",
+    "size": "L",
+    "psionicAbility": "89-121",
+    "attackDefenceModes": "a,c,d,g,j",
+    "xp": "20+5/hp",
+    "id": 0
+    }
+];
 
-let id = 0;
+let id = 1;
 
 let dungeon_controller = {
     create: (req, res) => {
@@ -31,9 +51,10 @@ let dungeon_controller = {
         res.status(200).send(dungeon)
     },
     readByName: (req, res) => {
-        let result = dungeon.filter((monster) => 
-            req.body.name.toLowerCase() === monster.name.toLowerCase())
-        res.status(200).send(result)
+        let results = req.params.name  
+        ? dungeon.filter((monster) => monster.name.toLowerCase().includes(req.params.name.toLowerCase()))
+        : []
+        res.status(200).send(results[results.length - 1])
     },
     update: (req, res) => {
         dungeon.forEach((monster) => {

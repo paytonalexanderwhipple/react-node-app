@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+.spellBook {
+    background-color: #222;
+    height: 350px;
+    width: 250px;
+    border: 5px outset gold;
+    padding: 10px;
+    font-family: 'Cinzel', sans-serif;
+    color: #ddd;
+}
+.spellBook-display {
+    height: 275px; 
+    border: gray solid 2px;
+    overflow: auto;
+}
+.pageSelect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page {
+    margin: 5px;
+}
+.search {
+    display: flex;
+}
+.search-input {
+    width: 100px;
+    height: 18px;
+    margin-right: 1px;
+}

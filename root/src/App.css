@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+.Buttons {
+    background-color: #333;
+    font-family: 'Cinzel';
+    color: #ddd;
+    border: none;
+    border-radius: 3px;
+    transition: .2s
+}
+.Buttons:hover {
+    color: #fff;
+    background-color: #444;
+}
+.Buttons:focus {
+    outline: none;
+    background-color: #555;
+    color: #fff
+}
+.input {
+    background-color: #333;
+    border: none;
+    border-radius: 3px;
+    transition: .2s;
+}
+.input:focus {
+    background-color: #444;
+}
+.content {
+    background-color: #333;
+    border: 5px outset gold;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+.MonsterDisplay {
+    position: relative;
+    bottom: 40px;
+    align-self: center;
+}
+.input-display {
+    margin-left: 50px;
+}
+.DisplayBox {
+    margin-top: 50px;
+}
+.lower-display {
+    display: flex;
+    justify-content: space-around;
+}
+.SpellBook {
+    margin: 50px 0;
+}
+

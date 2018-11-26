@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+.main {
+    background-color: #222;
+    border: gold 5px outset;
+    padding: 10px;
+    width: 700px;
+    height: 220px;
+    font-family: 'Cinzel', sans-serif;
+    color: #ddd;
+}
+.inputs {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    width: 100%;
+    height: 170px;
+}
+.input-box {
+    margin: 3px;
+    display: flex;
+    align-items: center;
+}
+.label {
+    font-size: 12px;
+    display: inline;
+}
+.input {
+    display: inline;
+    height: 15px;
+    border: none;
+    background-color: #333;
+    flex-grow: 1;
+    font-family: 'Cinzel', sans-serif;
+    color: #ddd;
+    font-size: 12px;
+    margin-left: 3px;
+    line-height: 15px;
+    border-radius: 3px;
+}
+.input:focus {
+    outline: none;
+}
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+.Create, .Update{
+    margin: 0 3px;
+    position: relative;
+    bottom: 6px;
+
+}
+.Create {
+    margin-right: 20px;
+}
+

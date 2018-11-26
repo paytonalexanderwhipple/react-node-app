@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+.main-display {
+    background-color: #222;
+    border: 5px outset gold;
+    height: 500px;
+    width: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header-monster-display {
+    display: flex;
+    justify-content: space-between;
+    color: #ddd;
+    font-size: 25px;
+    font-family: 'Cinzel', sans-serif;
+    letter-spacing: 5px;
+}
+.Clear {
+    font-size: 15px;
+}
+.Tile-Display {
+    overflow: auto;
+    margin: 10px 0 10px 0;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+
+}
+.XP-counter {
+    color: #ddd;
+    align-self: flex-end;
+    padding: 5px;
+    font-size: 20px;
+}
+.XP {
+    display: inline-block;
+    background-color: #333;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 3px;
+}

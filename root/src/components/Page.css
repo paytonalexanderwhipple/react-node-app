@@ -1,0 +1,34 @@
+.page-inside {
+    height: 271px;
+    padding: 10px;
+    width: auto;
+    font-size: 12px;
+}
+.spell-header {
+    font-size: 14px;
+    font-weight: bold
+}
+.spell-text {
+    margin-left: 5px;
+}
+
+.spellBook-page-0 {
+    background-image: url(https://openclipart.org/download/267403/ArtDeco-Border-6--Arvin61r58.svg);
+    background-size: cover;
+    background-position: center;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.spellBook-page-0-header {
+    align-self: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.spellBook-page-0-image {
+    height: 31px;
+
+}

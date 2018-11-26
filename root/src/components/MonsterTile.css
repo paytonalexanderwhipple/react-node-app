@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+.monster-tile {
+    height: 75px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 3px gold outset;
+    border-left: none;
+    margin: 10px 0 10px 0;
+    flex: 0 0 75px;
+    padding: 5px 10px 5px 5px;
+    font-family: 'Cinzel', sans-serif;
+    color: #ddd;
+}
+.tile-name{
+
+}
+.HP {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.HP-display{
+    color: #ddd;
+    align-self: center;
+}
+.hp-buttons {
+    position: relative;
+
+}
+.down {
+    margin-right: 5px
+}
+.skull {
+    position: relative;
+    bottom: 20px;
+    left: 7px;
+    height:20px;
+    width: 20px;
+}
+.Attack {
+    display: flex;
+    align-items: center;
+}
+.attack-display{
+    display: flex;
+    margin: 0 5px;
+}
+.attack-results{
+    margin: 0px 5px;
+}
