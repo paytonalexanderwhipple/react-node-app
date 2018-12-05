@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import Header from "./components/Header.jsx";
-import InputBox from "./components/InputBox.jsx";
-import DisplayBox from './components/DisplayBox.jsx';
-import MonsterDisplay from './components/MonsterDisplay.jsx';
-import SpellBook from './components/SpellBook.jsx';
+import Header from "./components/Header/Header.jsx";
+import InputBox from "./components/InputBox/InputBox.jsx";
+import DisplayBox from './components/DisplayBox/DisplayBox.jsx';
+import MonsterDisplay from './components/MonsterDisplay/MonsterDisplay.jsx';
+import SpellBook from './components/SpellBook/SpellBook.jsx';
 import './App.css';
 import './reset.css';
 

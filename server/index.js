@@ -1,12 +1,16 @@
+require('dotenv').config()
+const { SERVER_PORT, DB_URL } = process.env
+
 const express = require('express');
-const bodyParser = require('body-parser');
 const dungeon_controller = require('./controller/dungeon_contoller')
 const config = require('../config.js')
 
-// MIDDLE WARE
-const app = express();
+// TOP-LEVEL MIDDLE WARE
 
-app.use(bodyParser.json());
+const app = express();
+app.use(express.json());
+app.use(express.static(`${__dirname}/../build`))
+
 
 // END POINTS
 app.post('/api/dungeon', dungeon_controller.create);
@@ -20,6 +24,6 @@ app.put('/api/dungeon/:id', dungeon_controller.update)
 app.delete('/api/dungeon', dungeon_controller.delete)
 
 // IT CAN HEAR YOU
-app.listen(config.port, () => {
-    console.log(`The server is running on port: ${config.port}`);
+app.listen(SERVER_PORT, () => {
+    console.log(`Listening on port: ${SERVER_PORT}`);
 });

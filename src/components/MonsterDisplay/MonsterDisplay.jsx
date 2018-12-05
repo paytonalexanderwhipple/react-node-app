@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-import MonsterTile from './MonsterTile.jsx';
+import MonsterTile from '../MonsterTile/MonsterTile.jsx';
 import './MonsterDisplay.css'
 
 class MonsterDisplay extends Component {

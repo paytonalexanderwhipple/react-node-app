@@ -2,7 +2,7 @@ import React ,{Component} from 'react';
 import axios from 'axios';
 import {findBestMatch} from 'string-similarity';
 import './SpellBook.css'
-import Page from './Page.jsx'
+import Page from '../Page/Page.jsx'
 
 class SpellBook extends Component {
     constructor() {
