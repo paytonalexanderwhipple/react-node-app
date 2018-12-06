@@ -13,30 +13,8 @@ class App extends Component {
     super();
 
     this.state = {
-      monsterInput: {
-
-      },
       monsterDisplay: {
 
-      },
-      testMonster: {
-        "name": "Kobald",
-        "noAppearing": "5-20",
-        "AC": "8",
-        "move": "6\"",
-        "HD": "3 + 3",
-        "noOfAttacks": "1",
-        "damageAttack": "1-2/1-8/2-12",
-        "specialAttacks": "none",
-        "specialDefenses": "none",
-        "magicResistance": "none",
-        "intelligence": "low",
-        "alignment": "Chaotic Evil",
-        "size": "L",
-        "psionicAbility": "89-121",
-        "attackDefenceModes": "a,c,d,g,j",
-        "xp": "20+5/hp",
-        "id": 0
       },
       encounter: [
         //full of monsters!
@@ -99,15 +77,10 @@ class App extends Component {
     })
   }
 
-  handleChangeInput = (event) => {
-    let newObject = Object.assign({}, this.state.monsterInput)
-    newObject[event.target.name] = event.target.value;
-    this.setState({monsterInput: newObject})
-  }
-
   handleChangeDisplay = (event) => {
     let promise = axios.get(`/api/dungeon/${event.target.value}`)
     promise.then((res) => {
+      console.log(res.data)
       this.setState({monsterDisplay: res.data})
     })
   }

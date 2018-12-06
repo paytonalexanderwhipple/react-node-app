@@ -1,4 +1,6 @@
-let dungeon = [
+let { findBestMatch } = require('string-similarity')
+
+  let dungeon = [
     {
     "name": "Kobald",
     "noAppearing": "5-20",
@@ -48,13 +50,22 @@ let dungeon_controller = {
         res.status(201).send(dungeon)
     },
     read: (req, res) => {
-        res.status(200).send(dungeon)
+        let dbInstance = req.app.get('db')
+        dbInstance.getMonsters()
+            .then(monsterArr => {
+                res.status(200).send(monsterArr)
+            })
     },
     readByName: (req, res) => {
-        let results = req.params.name  
-        ? dungeon.filter((monster) => monster.name.toLowerCase().includes(req.params.name.toLowerCase()))
-        : []
-        res.status(200).send(results[results.length - 1])
+        let dbInstance = req.app.get('db')
+        dbInstance.getMonsters()
+            .then(monsterArr => {
+                let names = [] // gets a list of names to run string similarity to get best match
+                monsterArr.forEach(monster => {names.push(monster.name)})
+                let { bestMatch } = findBestMatch(req.params.name ,names)
+                let result = monsterArr.filter(monster => monster.name == bestMatch.target)
+                res.status(200).send(result)
+            }).catch(error => {console.log(`dungeon_controller/readByName ${error}`)})
     },
     update: (req, res) => {
         dungeon.forEach((monster) => {
