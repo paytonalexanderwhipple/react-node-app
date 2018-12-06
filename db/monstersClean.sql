@@ -1,15 +1,17 @@
+DROP TABLE monster;
+
 CREATE TABLE monster (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(40),
+    monster_id SERIAL PRIMARY KEY,
+    name VARCHAR(40) UNIQUE,
     no_appearing VARCHAR(20),
-    AC INTEGER,
+    AC VARCHAR(5),
     move VARCHAR(10),
     HD VARCHAR(20),
-    no_of_attacks INTEGER,
+    no_of_attacks VARCHAR(5),
     damage_attack VARCHAR(30),
     special_attacks VARCHAR(200),
     special_defences VARCHAR(200),
-    magic_resistance INTEGER,
+    magic_resistance VARCHAR(5),
     intelligence VARCHAR(20),
     alignment VARCHAR(40),
     size VARCHAR(10),

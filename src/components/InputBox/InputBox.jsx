@@ -8,13 +8,13 @@ class InputBox extends Component {
     
     postMonster = () => {
         axios.post('/api/dungeon', this.props.monsterInput)
+            .catch(error => alert(`(${error}) Database only accepts unique names.`))
       }
 
     putMonster = () => {
-        let promise = axios.get(`/api/dungeon/${this.state.monsterInput.name}`)
+        let promise = axios.get(`/api/dungeon/${this.props.monsterInput.name}`)
         promise.then((res) => {
-          console.log(res.data.id)
-          axios.put(`/api/dungeon/${res.data.id}`, this.state.monsterInput)
+          axios.put(`/api/dungeon/${res.data.id}`, this.props.monsterInput)
         })
     }
 
@@ -32,14 +32,14 @@ class InputBox extends Component {
                     <div className="input-box">
                         <h1 className="label">NO.APPEARING:</h1>
                         <input 
-                            name="noAppearing" 
+                            name="no_appearing" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
                     <div className="input-box">
                         <h1 className="label">ARMOR CLASS:</h1>
                         <input 
-                            name="AC" 
+                            name="ac" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
@@ -53,42 +53,42 @@ class InputBox extends Component {
                     <div className="input-box">
                         <h1 className="label">HIT DICE:</h1>
                         <input 
-                            name="HD" 
+                            name="hd" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
                     <div className="input-box">
                         <h1 className="label">NO.OF ATTACKS:</h1>
                         <input 
-                            name="noOfAttacks" 
+                            name="no_of_attacks" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
                     <div className="input-box">
                         <h1 className="label">DAMAGE/ATTACK:</h1>
                         <input 
-                            name="damageAttack" 
+                            name="damage_attack" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
                     <div className="input-box">
                         <h1 className="label">SPECIAL ATTACKS:</h1>
                         <input 
-                            name="specialAttacks" 
+                            name="special_attacks" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
                     <div className="input-box">
                         <h1 className="label">SPECIAL DEFENCES:</h1>
                         <input 
-                            name="specialDefenses" 
+                            name="special_defenses" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
                     <div className="input-box">
                         <h1 className="label">MAGIC RESISTANCE:</h1>
                         <input 
-                            name="magicResistance" 
+                            name="magic_resistance" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
@@ -116,14 +116,14 @@ class InputBox extends Component {
                     <div className="input-box">
                         <h1 className="label">PSIONIC ABILITY:</h1>
                         <input 
-                            name="psionicAbility" 
+                            name="psionic_ability" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
                     <div className="input-box">
                         <h1 className="label">Attack/Defence Modes:</h1>
                         <input 
-                            name="attackDefenceModes" 
+                            name="attack_defence_modes" 
                             onChange={event => {this.props.handleInput(event)}}
                             className="input"/>
                     </div>
